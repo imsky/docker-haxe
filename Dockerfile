@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 MAINTAINER Ivan Malopinsky
 
 RUN apt-get update
-RUN apt-get install -y wget
+RUN apt-get install -y wget libgc-dev
 
 # Download Haxe
 RUN mkdir /root/haxe
@@ -19,4 +19,8 @@ ENV HAXE_STD_PATH /root/haxe/std
 
 # Neko environment variables
 ENV NEKOPATH /root/neko
-ENV LD_LIBRARY_PATH /root/neko
+ENV LD_LIBRARY_PATH /root/neko/
+
+# Haxelib setup
+RUN mkdir /root/haxelib
+RUN haxelib setup /root/haxelib
