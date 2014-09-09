@@ -1,8 +1,10 @@
 FROM ubuntu:14.04
 MAINTAINER Ivan Malopinsky
 
+ADD test /root/test
+
 RUN apt-get update
-RUN apt-get install -y wget libgc-dev
+RUN apt-get install -y wget g++ libgc-dev
 
 # Download Haxe
 RUN mkdir /root/haxe
@@ -24,3 +26,11 @@ ENV LD_LIBRARY_PATH /root/neko/
 # Haxelib setup
 RUN mkdir /root/haxelib
 RUN haxelib setup /root/haxelib
+
+# Haxe C++ and Java targets
+RUN haxelib install hxcpp
+RUN haxelib install hxjava
+
+# Test
+
+# WORKDIR /root/test
