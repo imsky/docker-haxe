@@ -33,4 +33,4 @@ RUN haxelib install hxjava
 
 # Test
 
-# WORKDIR /root/test
+WORKDIR /root/test
