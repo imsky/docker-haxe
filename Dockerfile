@@ -4,7 +4,7 @@ MAINTAINER Ivan Malopinsky
 ADD test /root/test
 
 RUN apt-get update
-RUN apt-get install -y wget g++ libgc-dev
+RUN apt-get install -y wget g++ g++-multilib libgc-dev
 
 # Download Haxe
 RUN mkdir /root/haxe
@@ -34,3 +34,4 @@ RUN haxelib install hxjava
 # Test
 
 WORKDIR /root/test
+RUN haxe build.hxml
