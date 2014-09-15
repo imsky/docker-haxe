@@ -17,8 +17,5 @@
 -cpp test
 --next
 -main Test
--cs test
---next
--main Test
 -java java
 --next
