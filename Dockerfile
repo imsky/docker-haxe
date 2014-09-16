@@ -5,12 +5,8 @@ ADD test /root/test
 
 # Dependencies
 
-# RUN apt-key adv --keyserver pgp.mit.edu --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-# RUN echo "deb http://download.mono-project.com/repo/debian wheezy main" > /etc/apt/sources.list.d/mono-xamarin.list
-
 RUN apt-get update
 RUN apt-get install -y wget g++ g++-multilib libgc-dev
-# RUN apt-get install -y mono-devel
 
 # Download Haxe
 RUN mkdir /root/haxe
@@ -36,7 +32,6 @@ RUN haxelib setup /root/haxelib
 # Haxe C++ and Java targets
 RUN haxelib install hxcpp
 RUN haxelib install hxjava
-# RUN haxelib install hxcs
 
 # Test
 
