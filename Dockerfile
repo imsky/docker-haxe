@@ -31,7 +31,6 @@ RUN haxelib setup /root/haxelib
 
 # Haxe C++ and Java targets
 RUN haxelib install hxcpp
-RUN haxelib install hxjava
 
 # Test
 
