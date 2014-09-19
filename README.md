@@ -1,6 +1,15 @@
 # Haxe for Docker
 
-# Notes on C#
+# Installing Java
+
+Java is not enabled by default due to the additional resources the JDK takes up. To enable Java, run the following commands:
+
+```
+apt-get install default-jdk
+haxelib install hxjava
+```
+
+# Installing C#
 
 C# is not enabled by default due to the additional resources Mono takes up. To enable C#, run the following commands:
 
