@@ -35,4 +35,5 @@ RUN haxelib install hxcpp
 # Test
 
 WORKDIR /root/test
+RUN mkdir /root/test/build
 RUN haxe build.hxml
