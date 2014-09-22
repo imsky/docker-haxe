@@ -1,17 +1,17 @@
 -main Test
--js test.js
+-js build/test.js
 --next
 -main Test
--as3 test
+-as3 build/as3
 --next
 -main Test
--swf test.swf
+-swf build/test.swf
 --next
 -main Test
--swf test.n
+-swf build/test.n
 --next
 -main Test
--php test
+-php build/php
 --next
 -main Test
--cpp test
+-cpp build/cpp
