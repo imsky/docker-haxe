@@ -1,5 +1,13 @@
 # Haxe for Docker
 
+# Compiling
+
+The following command will run `haxe build.hxml` in the current directory:
+
+```
+sudo docker run --rm -v "$(pwd)":/tmp/haxe -w /tmp/haxe imsky/haxe haxe build.hxml
+```
+
 # Installing Java
 
 Java is not enabled by default due to the additional resources the JDK takes up. To enable Java, run the following commands:
