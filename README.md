@@ -1,11 +1,12 @@
 # Haxe for Docker
 
-# Compiling
+# Usage
 
-The following command will run `haxe build.hxml` in the current directory:
+The following command will alias `haxeb` to the Docker `haxe` and run `haxe build.hxml` in the current directory:
 
 ```
-sudo docker run --rm -v "$(pwd)":/tmp/haxe -w /tmp/haxe imsky/haxe haxe build.hxml
+alias haxeb='sudo docker run --rm -v "$(pwd)":/tmp/haxe -w /tmp/haxe imsky/haxe haxe'
+haxeb build.hxml
 ```
 
 # Installing Java
