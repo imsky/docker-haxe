@@ -18,7 +18,7 @@ apt-get install default-jdk
 haxelib install hxjava
 ```
 
-## Installing C\#
+## Installing C&#35;
 
 C# is not enabled by default due to the additional resources Mono takes up. To enable C#, run the following commands:
 
