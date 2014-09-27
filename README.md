@@ -1,5 +1,12 @@
 # Haxe for Docker
 
+## Install
+
+```
+sudo apt-get install docker.io
+docker pull imsky/haxe
+```
+
 ## Usage
 
 The following command will alias `haxeb` to the Docker `haxe` and run `haxe build.hxml` in the current directory:
