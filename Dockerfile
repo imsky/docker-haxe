@@ -4,7 +4,6 @@ MAINTAINER Ivan Malopinsky
 ADD test /root/test
 
 # Dependencies
-
 RUN apt-get update
 RUN apt-get install -y wget g++ g++-multilib libgc-dev
 
@@ -33,7 +32,6 @@ RUN haxelib setup /root/haxelib
 RUN haxelib install hxcpp
 
 # Test
-
 WORKDIR /root/test
-RUN mkdir /root/test/build
+RUN mkdir build
 RUN haxe build.hxml
