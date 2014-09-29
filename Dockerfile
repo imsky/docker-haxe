@@ -18,10 +18,10 @@ RUN wget -O - http://nekovm.org/_media/neko-2.0.0-linux64.tar.gz | tar xzf - --s
 ENV PATH /root/neko/:$PATH
 
 # Haxe environment variables
-ENV HAXE_STD_PATH /root/haxe/std
+ENV HAXE_STD_PATH /root/haxe/std/
 
 # Neko environment variables
-ENV NEKOPATH /root/neko
+ENV NEKOPATH /root/neko/
 ENV LD_LIBRARY_PATH /root/neko/
 
 # Haxelib setup
