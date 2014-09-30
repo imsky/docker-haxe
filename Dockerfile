@@ -26,7 +26,8 @@ ENV LD_LIBRARY_PATH /root/neko/
 
 # Haxelib setup
 RUN mkdir /root/haxelib
-RUN haxelib setup /root/haxelib
+RUN echo /root/haxelib > /root/.haxelib
+RUN cp /root/.haxelib /etc/
 
 # Haxe C++ and Java targets
 RUN haxelib install hxcpp
