@@ -12,8 +12,8 @@ docker pull imsky/haxe
 The following command will alias `haxeb` to the Docker `haxe` and run `haxe build.hxml` in the current directory:
 
 ```
-alias haxeb='sudo docker run --rm -v "$(pwd)":/tmp/haxe -w /tmp/haxe imsky/haxe haxe'
-haxeb build.hxml
+alias dhaxe='sudo docker run --rm -v "$(pwd)":/tmp/haxe -w /tmp/haxe imsky/haxe haxe'
+dhaxe build.hxml
 ```
 
 ## Installing Java
