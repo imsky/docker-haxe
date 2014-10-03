@@ -4,7 +4,7 @@
 
 ```
 sudo apt-get install docker.io
-docker pull imsky/haxe
+sudo docker pull imsky/haxe
 ```
 
 ## Usage
