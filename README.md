@@ -35,3 +35,11 @@ echo "deb http://download.mono-project.com/repo/debian wheezy main" > /etc/apt/s
 apt-get install mono-devel
 haxelib install hxcs
 ```
+
+## License
+
+`docker-haxe` is licensed under the MIT license.
+
+## Credits
+
+`docker-haxe` is a project by [http://imsky.co](Ivan Malopinsky).
