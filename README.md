@@ -42,4 +42,4 @@ haxelib install hxcs
 
 ## Credits
 
-`docker-haxe` is a project by [http://imsky.co](Ivan Malopinsky).
+`docker-haxe` is a project by [Ivan Malopinsky](http://imsky.co).
