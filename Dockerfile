@@ -29,7 +29,7 @@ RUN mkdir /root/haxelib
 RUN echo /root/haxelib > /root/.haxelib
 RUN cp /root/.haxelib /etc/
 
-# Haxe C++ and Java targets
+# Haxe C++ compiler target
 RUN haxelib install hxcpp
 
 # Test
