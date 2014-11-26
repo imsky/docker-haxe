@@ -12,7 +12,7 @@ sudo docker pull imsky/haxe
 The following command will alias `dhaxe` to the Docker `haxe` and run `haxe build.hxml` in the current directory:
 
 ```
-alias dhaxe='sudo docker run --rm -v "$(pwd)":/tmp/haxe -w /tmp/haxe imsky/haxe haxe'
+alias dhaxe='sudo docker run --name dhaxe --rm -v "$(pwd)":/tmp/haxe -w /tmp/haxe imsky/haxe haxe'
 dhaxe build.hxml
 ```
 
