@@ -2,19 +2,19 @@
 -js build/test.js
 --next
 -main Test
--as3 build/as3
---next
--main Test
 -swf build/test.swf
 --next
 -main Test
--swf build/test.n
+-python build/test.py
+--next
+-main Test
+-neko build/test.n
+--next
+-main Test
+-as3 build/as3
 --next
 -main Test
 -php build/php
 --next
 -main Test
 -cpp build/cpp
---next
--main Test
--python build/test.py

@@ -41,8 +41,6 @@ RUN wget -O - $HAXEURL | tar xzf - --strip=1 -C $HAXEPATH
 RUN mkdir /root/haxelib
 RUN echo /root/haxelib > /root/.haxelib
 RUN cp /root/.haxelib /etc/
-
-# Haxe C++ compiler target
 RUN haxelib install hxcpp
 
 # Test

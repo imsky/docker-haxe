@@ -60,6 +60,8 @@ Hello world.
 > Python passed
 Test.hx:5: Hello world.
 > PHP passed
+Test.hx:5: Hello world.
+> Neko passed
 ```
 
 Clean up after builds:
