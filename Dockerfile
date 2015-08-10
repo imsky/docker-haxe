@@ -29,13 +29,13 @@ ENV PATH $NODEPATH/bin:$PATH
 RUN mkdir {$NODEPATH,$NEKOPATH,$HAXEPATH}
 
 # Download Node.js
-RUN wget -O - NODEURL | tar xzf - --strip=1 -C $NODEPATH
+RUN wget -O - $NODEURL | tar xzf - --strip=1 -C $NODEPATH
 
 # Download Neko
-RUN wget -O - NEKOURL | tar xzf - --strip=1 -C $NEKOPATH
+RUN wget -O - $NEKOURL | tar xzf - --strip=1 -C $NEKOPATH
 
 # Download Haxe
-RUN wget -O - HAXEURL | tar xzf - --strip=1 -C $HAXEPATH
+RUN wget -O - $HAXEURL | tar xzf - --strip=1 -C $HAXEPATH
 
 # Haxelib setup
 RUN mkdir /root/haxelib
