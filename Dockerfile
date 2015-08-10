@@ -21,6 +21,11 @@ ENV PATH $NEKOPATH:$PATH
 ENV NODEPATH /root/node
 ENV PATH $NODEPATH/bin:$PATH
 
+# Testing depencies
+
+RUN apt-get install -y g++ g++-multilib libgc-dev
+RUN apt-get install -y php5-cli
+
 RUN mkdir {$NODEPATH,$NEKOPATH,$HAXEPATH}
 
 # Download Node.js
@@ -31,11 +36,6 @@ RUN wget -O - http://nekovm.org/_media/neko-2.0.0-linux64.tar.gz | tar xzf - --s
 
 # Download Haxe
 RUN wget -O - http://haxe.org/website-content/downloads/3.2.0/downloads/haxe-3.2.0-linux64.tar.gz | tar xzf - --strip=1 -C $HAXEPATH
-
-# Testing depencies
-
-RUN apt-get install -y g++ g++-multilib libgc-dev
-RUN apt-get install -y php5-cli
 
 # Haxelib setup
 RUN mkdir /root/haxelib
