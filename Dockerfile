@@ -1,11 +1,16 @@
-FROM ubuntu:14.04
+FROM phusion/baseimage:0.9.16
 MAINTAINER Ivan Malopinsky
+
+ENV DEBIAN_FRONTEND noninteractive
 
 ADD test /root/test
 
 # Dependencies
-RUN apt-get update
-RUN apt-get install -y wget g++ g++-multilib libgc-dev
+RUN apt-get update && apt-get install -y \
+  wget \
+  g++ \
+  g++-multilib \
+  libgc-dev
 
 # Download Haxe
 RUN mkdir /root/haxe
