@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -y \
   g++ \
   g++-multilib \
   libgc-dev \
-  php5
+  php5-cli
 
 # Download Node.js
 RUN mkdir /root/node
