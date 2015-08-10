@@ -43,6 +43,32 @@ apt-get install mono-devel
 haxelib install hxcs
 ```
 
+## Building
+
+```
+docker build -t imsky/haxe:dev .
+```
+
+You should see the following once the build finishes:
+
+```
+Test.hx:5: Hello world.
+> C++ passed
+Hello world.
+> JavaScript passed
+Hello world.
+> Python passed
+Test.hx:5: Hello world.
+> PHP passed
+```
+
+Clean up after builds:
+
+```
+docker images --no-trunc | grep none | awk '{print $3}' | xargs -r docker rmi
+docker ps -a --no-trunc | grep Exit | awk '{print $1}' | xargs -r docker rm
+```
+
 ## License
 
 `docker-haxe` is licensed under the MIT license.
