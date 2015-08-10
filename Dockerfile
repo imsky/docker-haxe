@@ -1,16 +1,8 @@
-FROM phusion/baseimage:0.9.16
+FROM phusion/baseimage:0.9.17
 MAINTAINER Ivan Malopinsky
 
 ENV DEBIAN_FRONTEND noninteractive
-
-ADD test /root/test
-
-# Dependencies
-RUN apt-get update && apt-get install -y \
-  wget \
-  g++ \
-  g++-multilib \
-  libgc-dev
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 # Haxe environment variables
 ENV HAXE_STD_PATH /root/haxe/std/
@@ -20,6 +12,21 @@ ENV PATH /root/haxe/:$PATH
 ENV NEKOPATH /root/neko/
 ENV LD_LIBRARY_PATH /root/neko/
 ENV PATH /root/neko/:$PATH
+
+# Node environment variables
+ENV PATH /root/node/bin:$PATH
+
+# Dependencies
+RUN apt-get update && apt-get install -y \
+  wget \
+  g++ \
+  g++-multilib \
+  libgc-dev \
+  php5
+
+# Download Node.js
+RUN mkdir /root/node
+RUN wget -O - https://nodejs.org/dist/v0.12.7/node-v0.12.7-linux-x64.tar.gz | tar xzf - --strip=1 -C "/root/node"
 
 # Download Neko
 RUN mkdir /root/neko
@@ -38,7 +45,8 @@ RUN cp /root/.haxelib /etc/
 RUN haxelib install hxcpp
 
 # Test
+ADD test /root/test
 WORKDIR /root/test
 RUN mkdir build
 RUN haxe build.hxml
-RUN build/cpp/Test
+RUN ./verify.sh
