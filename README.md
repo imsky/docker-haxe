@@ -65,8 +65,8 @@ Test.hx:5: Hello world.
 Clean up after builds:
 
 ```
-docker images --no-trunc | grep none | awk '{print $3}' | xargs -r docker rmi
 docker ps -a --no-trunc | grep Exit | awk '{print $1}' | xargs -r docker rm
+docker images --no-trunc | grep none | awk '{print $3}' | xargs -r docker rmi
 ```
 
 ## License
