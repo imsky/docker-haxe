@@ -15,3 +15,6 @@
 --next
 -main Test
 -cpp build/cpp
+--next
+-main Test
+-python build/test.py
