@@ -17,12 +17,7 @@ ENV PATH /root/neko/:$PATH
 ENV PATH /root/node/bin:$PATH
 
 # Dependencies
-RUN apt-get update && apt-get install -y \
-  wget \
-  g++ \
-  g++-multilib \
-  libgc-dev \
-  php5-cli
+RUN apt-get update && apt-get install -y wget
 
 # Download Node.js
 RUN mkdir /root/node
@@ -35,6 +30,11 @@ RUN wget -O - http://nekovm.org/_media/neko-2.0.0-linux64.tar.gz | tar xzf - --s
 # Download Haxe
 RUN mkdir /root/haxe
 RUN wget -O - http://haxe.org/website-content/downloads/3.2.0/downloads/haxe-3.2.0-linux64.tar.gz | tar xzf - --strip=1 -C "/root/haxe"
+
+# Testing depencies
+
+RUN apt-get install -y g++ g++-multilib libgc-dev
+RUN apt-get install -y php5-cli
 
 # Haxelib setup
 RUN mkdir /root/haxelib
