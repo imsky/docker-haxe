@@ -25,7 +25,8 @@ To enable additional compiler targets such as Java and C#, you'll need to run th
 
 ```
 docker kill hx && docker rm hx
-docker run -d --name hx imsky/haxe /root/scripts/background
+docker run -d -v "$(pwd)":/tmp/hx -w /tmp/hx 
+--name hx imsky/haxe /root/scripts/background
 ```
 
 ### Enabling Java builds
