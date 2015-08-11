@@ -43,9 +43,14 @@ RUN echo /root/haxelib > /root/.haxelib
 RUN cp /root/.haxelib /etc/
 RUN haxelib install hxcpp
 
+# Scripts
+ADD scripts /root/scripts
+
 # Test
 ADD test /root/test
 WORKDIR /root/test
 RUN mkdir build
 RUN haxe build.hxml
 RUN ./verify.sh
+
+CMD ["/bin/bash"]

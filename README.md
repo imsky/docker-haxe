@@ -1,46 +1,43 @@
 # Haxe for Docker
 
+## Requirements
+
+* Linux 3.10+ or OS X/Windows with <http://boot2docker.io>
+* Docker 1.3+
+
 ## Install
 
 ```
-sudo apt-get install docker.io
-sudo docker pull imsky/haxe
+docker pull imsky/haxe
 ```
 
 ## Usage
 
-The following command will alias `dhaxe` to the Docker `haxe` and run `haxe build.hxml` in the current directory:
-
-### Linux
 ```
-alias dhaxe='sudo docker run --name dhaxe --rm -v "$(pwd)":/tmp/haxe -w /tmp/haxe imsky/haxe haxe'
-dhaxe build.hxml
+docker run --rm -v "$(pwd)":/tmp/hx -w /tmp/hx imsky/haxe haxe build.hxml
 ```
 
-### OS X and Windows (through [boot2docker](http://boot2docker.io/))
-```
-alias dhaxe='docker run --name dhaxe --rm -v "$(pwd)":/tmp/haxe -w /tmp/haxe imsky/haxe haxe'
-dhaxe build.hxml
-```
+## Persistent mode
 
-## Installing Java
+To enable additional compiler targets such as Java and C#, you'll need to run the container in persistent mode.
 
-Java is not enabled by default due to the additional resources the JDK takes up. To enable Java, run the following commands:
+### Enabling persistence
 
 ```
-apt-get install default-jdk
-haxelib install hxjava
+docker kill hx && docker rm hx
+docker run -d --name hx imsky/haxe /root/scripts/background
 ```
 
-## Installing C&#35;
-
-C# is not enabled by default due to the additional resources Mono takes up. To enable C#, run the following commands:
+### Enabling Java builds
 
 ```
-apt-key adv --keyserver pgp.mit.edu --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb http://download.mono-project.com/repo/debian wheezy main" > /etc/apt/sources.list.d/mono-xamarin.list
-apt-get install mono-devel
-haxelib install hxcs
+docker exec hx /root/scripts/install-java
+```
+
+### Enabling C&#35; builds
+
+```
+docker exec hx /root/scripts/install-cs
 ```
 
 ## Building
