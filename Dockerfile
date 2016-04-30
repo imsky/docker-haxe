@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.17
+FROM phusion/baseimage
 MAINTAINER Ivan Malopinsky
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -10,7 +10,7 @@ RUN apt-get install -y g++ g++-multilib libgc-dev
 RUN apt-get install -y php5-cli
 
 # Haxe environment variables
-ENV HAXEURL http://haxe.org/website-content/downloads/3.2.0/downloads/haxe-3.2.0-linux64.tar.gz
+ENV HAXEURL http://haxe.org/website-content/downloads/3.2.1/downloads/haxe-3.2.1-linux64.tar.gz
 ENV HAXEPATH /root/haxe
 ENV HAXE_STD_PATH $HAXEPATH/std/
 ENV PATH $HAXEPATH:$PATH
