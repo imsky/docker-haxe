@@ -7,22 +7,22 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 # Dependencies
 RUN apt-get update && apt-get install -y wget
 RUN apt-get install -y g++ g++-multilib libgc-dev
-RUN apt-get install -y php5-cli
+RUN apt-get install -y php7.0-cli
 
 # Haxe environment variables
-ENV HAXEURL http://haxe.org/website-content/downloads/3.2.1/downloads/haxe-3.2.1-linux64.tar.gz
+ENV HAXEURL http://haxe.org/website-content/downloads/3.4.3/downloads/haxe-3.4.3-linux64.tar.gz
 ENV HAXEPATH /root/haxe
 ENV HAXE_STD_PATH $HAXEPATH/std/
 ENV PATH $HAXEPATH:$PATH
 
 # Neko environment variables
-ENV NEKOURL http://nekovm.org/_media/neko-2.0.0-linux64.tar.gz
+ENV NEKOURL http://nekovm.org/_media/neko-2.1.0-linux64.tar.gz
 ENV NEKOPATH /root/neko
 ENV LD_LIBRARY_PATH $NEKOPATH
 ENV PATH $NEKOPATH:$PATH
 
 # Node environment variables
-ENV NODEURL https://nodejs.org/dist/v0.12.7/node-v0.12.7-linux-x64.tar.gz
+ENV NODEURL https://nodejs.org/dist/v8.6.0/node-v8.6.0-linux-x64.tar.gz
 ENV NODEPATH /root/node
 ENV PATH $NODEPATH/bin:$PATH
 
