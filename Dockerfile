@@ -10,7 +10,7 @@ RUN apt-get install -y g++ g++-multilib libgc-dev
 RUN apt-get install -y php7.0-cli
 
 # Haxe environment variables
-ENV HAXEURL http://haxe.org/website-content/downloads/3.4.3/downloads/haxe-3.4.3-linux64.tar.gz
+ENV HAXEURL http://haxe.org/website-content/downloads/3.4.7/downloads/haxe-3.4.7-linux64.tar.gz
 ENV HAXEPATH /root/haxe
 ENV HAXE_STD_PATH $HAXEPATH/std/
 ENV PATH $HAXEPATH:$PATH
